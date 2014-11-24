@@ -16,4 +16,18 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+  $(document).foundation(); 
+  slide();
+});
+
+function slide(){
+    
+    var elm = $('.slide');
+    var x = parseInt(elm.css( "padding-left" ));
+    $(elm).css('padding-left', (x + 2 + "px" ) );
+    if(x < 50) {
+      
+      setTimeout(slide,1000);
+    }
+  };
